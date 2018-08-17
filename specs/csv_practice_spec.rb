@@ -145,25 +145,25 @@ describe 'CSV Practice Methods' do
       expect(gold_medal_winners.length).must_equal count
     end
   end
-#
-#   describe 'country_totals_sorted_by_country' do
-#     it 'orders all the total medal reports' do
-#       # Arrange
-#       data = load_data(OLYMPIC_DATA_FILENAME)
-#       medal_totals = total_medals_per_country(data)
-#
-#       # Act
-#        sorted_medal_list = medals_sorted_by_country(medal_totals)
-#
-#       # Assert
-#       last_medal = sorted_medal_list.first
-#       sorted_medal_list.each do |current_entry|
-#         expect(last_medal[:country] <= current_entry[:country]).must_equal true
-#
-#         last_medal = current_entry
-#       end
-#     end
-#   end
+
+  describe 'country_totals_sorted_by_country' do
+    it 'orders all the total medal reports' do
+      # Arrange
+      data = load_data(OLYMPIC_DATA_FILENAME)
+      medal_totals = total_medals_per_country(data)
+
+      # Act
+       sorted_medal_list = medals_sorted_by_country(medal_totals)
+
+      # Assert
+      last_medal = sorted_medal_list.first
+      sorted_medal_list.each do |current_entry|
+        expect(last_medal[:country] <= current_entry[:country]).must_equal true
+
+        last_medal = current_entry
+      end
+    end
+  end
 #
 #   describe 'total_medals_per_country' do
 #     it 'returns the right value' do

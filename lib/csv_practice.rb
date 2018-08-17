@@ -53,7 +53,7 @@ end
 
 
 
-#############total_medals_per_country(ya)
+yaymedals=total_medals_per_country(ya)
 
 def save_medal_totals(filename, medal_totals)
   CSV.open(filename, "w") do |csv|
@@ -64,30 +64,27 @@ def save_medal_totals(filename, medal_totals)
   end
   return medal_totals
 end
-#
-# # Part 2 - More Enumerable Practice
-#
+
+# Part 2 - More Enumerable Practice
+
 def all_gold_medal_winners(olympic_data)
-  # medal_data = []
-  # olympic_data.each do |athletes|
-  #   athletes = athletes.select {|k,v| k=="Medal" && v=="Gold"}
-  #   medal_data << athletes
-  # end
-  # puts medal_data
-
   return gold_athletes = olympic_data.select {|athletes| athletes["Medal"] == "Gold"}
-
-
 end
 
 all_gold_medal_winners(ya)
-# def medals_sorted_by_country(medal_totals)
-#
-# end
-#
-# def country_with_most_medals(medal_totals)
-#
-# end
+
+def medals_sorted_by_country(medal_totals)
+    medal_totals = medal_totals.select {|country| country[:total_medals] !=0}
+    medal_totals = medal_totals.sort_by {|country| country[:country]}
+
+    #medal_totals.reverse!
+end
+
+puts medals_sorted_by_country(yaymedals)
+
+def country_with_most_medals(medal_totals)
+  a.max_by {|x| x.length }
+end
 #
 # def athlete_height_in_inches(olympic_data)
 #
