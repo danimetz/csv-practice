@@ -50,14 +50,20 @@ def total_medals_per_country(olympic_data)
   return countries_medals
 end
 
-save_medal_totals(filename, medal_totals)
+
 
 
 #############total_medals_per_country(ya)
 
-# def save_medal_totals(filename, medal_totals)
-#
-# end
+def save_medal_totals(filename, medal_totals)
+  CSV.open(filename, "w") do |csv|
+    csv << medal_totals.first.keys
+    medal_totals.each do |country|
+      csv << country.values
+    end
+  end
+  return medal_totals
+end
 #
 # # Part 2 - More Enumerable Practice
 #

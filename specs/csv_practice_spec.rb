@@ -85,35 +85,35 @@ describe 'CSV Practice Methods' do
     end
   end
 
-#   describe 'Can create a total medal file' do
-#     it 'The file is created' do
-#       # Arrange
-#       data = load_data(OLYMPIC_DATA_FILENAME)
-#       medal_totals = total_medals_per_country(data)
-#
-#       # Act
-#       save_medal_totals(MEDAL_TOTALS_FILENAME, medal_totals)
-#
-#       # Assert
-#       expect(File.exist?(MEDAL_TOTALS_FILENAME)).must_equal true
-#     end
-#
-#     it 'The file contains the right entries and headers' do
-#       # Arrange
-#       data = load_data(OLYMPIC_DATA_FILENAME)
-#       medal_totals = total_medals_per_country(data)
-#
-#       # Act
-#       save_medal_totals(MEDAL_TOTALS_FILENAME, medal_totals)
-#
-#       # Assert
-#       CSV.read(OLYMPIC_DATA_FILENAME, headers: true) do |line|
-#         correct_totals.keys.each do |key|
-#           expect(line[key]).must_equal correct_totals[key]
-#         end
-#       end
-#     end
-#   end
+  describe 'Can create a total medal file' do
+    it 'The file is created' do
+      # Arrange
+      data = load_data(OLYMPIC_DATA_FILENAME)
+      medal_totals = total_medals_per_country(data)
+
+      # Act
+      save_medal_totals(MEDAL_TOTALS_FILENAME, medal_totals)
+
+      # Assert
+      expect(File.exist?(MEDAL_TOTALS_FILENAME)).must_equal true
+    end
+
+    it 'The file contains the right entries and headers' do
+      # Arrange
+      data = load_data(OLYMPIC_DATA_FILENAME)
+      medal_totals = total_medals_per_country(data)
+
+      # Act
+      save_medal_totals(MEDAL_TOTALS_FILENAME, medal_totals)
+
+      # Assert
+      CSV.read(OLYMPIC_DATA_FILENAME, headers: true) do |line|
+        correct_totals.keys.each do |key|
+          expect(line[key]).must_equal correct_totals[key]
+        end
+      end
+    end
+  end
 #
 #   describe 'All Gold Medal Winners' do
 #     # Arrange
