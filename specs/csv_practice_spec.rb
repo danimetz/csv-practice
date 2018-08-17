@@ -180,22 +180,22 @@ describe 'CSV Practice Methods' do
     end
   end
 
-#   describe 'athlete_height_in_inches' do
-#     it 'correctly converts the height to inches' do
-#       # Arrange
-#       data = load_data(OLYMPIC_DATA_FILENAME)
-#
-#       # Act
-#       converted_data = athlete_height_in_inches(data)
-#
-#       # Assert
-#       expect(converted_data.class).must_equal Array
-#       converted_data.each_with_index do |entry, index|
-#         expect(entry.class).must_equal Hash
-#         # puts "#{data[index]}"
-#         # puts "Converted data #{entry}"
-#         expect(entry['Height']).must_be_close_to(data[index]['Height'].to_f / 2.5)
-#       end
-#     end
-#   end
+  describe 'athlete_height_in_inches' do
+    it 'correctly converts the height to inches' do
+      # Arrange
+      data = load_data(OLYMPIC_DATA_FILENAME)
+
+      # Act
+      converted_data = athlete_height_in_inches(data)
+
+      # Assert
+      expect(converted_data.class).must_equal Array
+      converted_data.each_with_index do |entry, index|
+        expect(entry.class).must_equal Hash
+        # puts "#{data[index]}"
+        # puts "Converted data #{entry}"
+        expect(entry['Height']).must_be_close_to(data[index]['Height'].to_f / 2.5)
+      end
+    end
+  end
 end

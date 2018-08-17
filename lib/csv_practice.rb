@@ -85,7 +85,9 @@ puts medals_sorted_by_country(yaymedals)
 def country_with_most_medals(medal_totals)
   medal_totals.max_by {|country| country[:total_medals] }
 end
-#
-# def athlete_height_in_inches(olympic_data)
-#
-# end
+
+def athlete_height_in_inches(olympic_data)
+  #Why do we need to clone???
+  olympic_clone = olympic_data.map {|athletes| athletes.clone}
+  olympic_clone.each {|athletes| athletes["Height"] = athletes["Height"].to_f*0.4}
+end
