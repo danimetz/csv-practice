@@ -67,10 +67,20 @@ end
 #
 # # Part 2 - More Enumerable Practice
 #
-# def all_gold_medal_winners(olympic_data)
-#
-# end
-#
+def all_gold_medal_winners(olympic_data)
+  # medal_data = []
+  # olympic_data.each do |athletes|
+  #   athletes = athletes.select {|k,v| k=="Medal" && v=="Gold"}
+  #   medal_data << athletes
+  # end
+  # puts medal_data
+
+  return gold_athletes = olympic_data.select {|athletes| athletes["Medal"] == "Gold"}
+
+
+end
+
+all_gold_medal_winners(ya)
 # def medals_sorted_by_country(medal_totals)
 #
 # end

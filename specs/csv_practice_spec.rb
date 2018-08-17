@@ -114,37 +114,37 @@ describe 'CSV Practice Methods' do
       end
     end
   end
-#
-#   describe 'All Gold Medal Winners' do
-#     # Arrange
-#     data = load_data(OLYMPIC_DATA_FILENAME)
-#
-#     # Act
-#     gold_medal_winners = all_gold_medal_winners(data)
-#
-#     it 'returns an array of hashes' do
-#
-#       # Assert
-#       expect(gold_medal_winners.class).must_equal Array
-#       gold_medal_winners.each do |winner|
-#         expect(winner.class).must_equal Hash
-#       end
-#     end
-#
-#     it 'They all have `Gold` in the medal field' do
-#       # Assert
-#       gold_medal_winners.each do |winner|
-#         expect(winner['Medal'].upcase.include? 'GOLD').must_equal true
-#       end
-#     end
-#
-#     it 'has the correct number of gold medalists' do
-#       count = data.sum do |athlete|
-#         athlete['Medal'].upcase == 'GOLD' ? 1 : 0
-#       end
-#       expect(gold_medal_winners.length).must_equal count
-#     end
-#   end
+
+  describe 'All Gold Medal Winners' do
+    # Arrange
+    data = load_data(OLYMPIC_DATA_FILENAME)
+
+    # Act
+    gold_medal_winners = all_gold_medal_winners(data)
+
+    it 'returns an array of hashes' do
+
+      # Assert
+      expect(gold_medal_winners.class).must_equal Array
+      gold_medal_winners.each do |winner|
+        expect(winner.class).must_equal Hash
+      end
+    end
+
+    it 'They all have `Gold` in the medal field' do
+      # Assert
+      gold_medal_winners.each do |winner|
+        expect(winner['Medal'].upcase.include? 'GOLD').must_equal true
+      end
+    end
+
+    it 'has the correct number of gold medalists' do
+      count = data.sum do |athlete|
+        athlete['Medal'].upcase == 'GOLD' ? 1 : 0
+      end
+      expect(gold_medal_winners.length).must_equal count
+    end
+  end
 #
 #   describe 'country_totals_sorted_by_country' do
 #     it 'orders all the total medal reports' do
