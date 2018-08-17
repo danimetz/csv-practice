@@ -54,38 +54,37 @@ describe 'CSV Practice Methods' do
     end
   end
 
-#   describe 'total_medals_per_country' do
-#     # Arrange
-#     data = load_data(OLYMPIC_DATA_FILENAME)
-#
-#     correct_totals = {
-#       'Norway' => 133,
-#       'United States' => 944,
-#       'Canada' => 321,
-#       'Russia' => 470,
-#       'China' => 423,
-#       'Bahrain' => 3,
-#       'Jamaica' => 69,
-#       'United Arab Emirates' => 1
-#     }
-#
-#     it 'should return an array of hashes' do
-#
-#       # Act
-#       total_medals = total_medals_per_country(data)
-#
-#       # Assert
-#       expect(total_medals).must_be_instance_of Array
-#       correct_totals.keys.each do |country|
-#         country_total = total_medals.find do |medal_total|
-#           medal_total[:country] == country
-#         end
-#
-#         expect(country_total[:total_medals]).must_equal correct_totals[country]
-#       end
-#     end
-#   end
-#
+  describe 'total_medals_per_country' do
+    # Arrange
+    data = load_data(OLYMPIC_DATA_FILENAME)
+
+    correct_totals = {
+      'Norway' => 133,
+      'United States' => 944,
+      'Canada' => 321,
+      'Russia' => 470,
+      'China' => 423,
+      'Bahrain' => 3,
+      'Jamaica' => 69,
+      'United Arab Emirates' => 1
+    }
+
+    it 'should return an array of hashes' do
+
+      # Act
+      total_medals = total_medals_per_country(data)
+
+      # Assert
+      expect(total_medals).must_be_instance_of Array
+      correct_totals.keys.each do |country|
+        country_total = total_medals.find do |medal_total|
+          medal_total[:country] == country
+        end
+        expect(country_total[:total_medals]).must_equal correct_totals[country]
+      end
+    end
+  end
+
 #   describe 'Can create a total medal file' do
 #     it 'The file is created' do
 #       # Arrange
