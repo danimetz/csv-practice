@@ -83,7 +83,7 @@ end
 puts medals_sorted_by_country(yaymedals)
 
 def country_with_most_medals(medal_totals)
-  a.max_by {|x| x.length }
+  medal_totals.max_by {|country| country[:total_medals] }
 end
 #
 # def athlete_height_in_inches(olympic_data)

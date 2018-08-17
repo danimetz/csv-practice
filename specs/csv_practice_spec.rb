@@ -164,22 +164,22 @@ describe 'CSV Practice Methods' do
       end
     end
   end
-#
-#   describe 'total_medals_per_country' do
-#     it 'returns the right value' do
-#       # Arrange
-#       data = load_data(OLYMPIC_DATA_FILENAME)
-#       medal_totals = total_medals_per_country(data)
-#
-#
-#       # Act
-#       most_medals = country_with_most_medals(medal_totals)
-#
-#       # Assert
-#       expect(most_medals[:country]).must_equal 'United States'
-#     end
-#   end
-#
+
+  describe 'total_medals_per_country' do
+    it 'returns the right value' do
+      # Arrange
+      data = load_data(OLYMPIC_DATA_FILENAME)
+      medal_totals = total_medals_per_country(data)
+
+
+      # Act
+      most_medals = country_with_most_medals(medal_totals)
+
+      # Assert
+      expect(most_medals[:country]).must_equal 'United States'
+    end
+  end
+
 #   describe 'athlete_height_in_inches' do
 #     it 'correctly converts the height to inches' do
 #       # Arrange
